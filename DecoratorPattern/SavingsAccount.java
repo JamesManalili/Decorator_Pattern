@@ -16,25 +16,33 @@ public class SavingsAccount implements BankAccount{
     public void setBalance(Double balance) {
         this.balance = balance;
     }
-
-    @Override
-    public String showAccountType() {
-        return "Saving Account";
-    }
-
+ 
     @Override
     public Double getInterestRate() {
         return 0.01;
     }
-
+    
     @Override
     public Double getBalance() {
         return balance;
     }
 
     @Override
+    public String showAccountType() {
+        return "Saving Account";
+    }
+
+    @Override
     public String showBenefits() {
         return "Standard Savings Account";
+    }
+
+    
+    @Override
+    public String showInfo() {
+        return "Account number: " + accountNumber +
+                "\nAccount name: " + accountName +
+                "\nBalance: " + balance;
     }
 
     @Override
@@ -42,10 +50,4 @@ public class SavingsAccount implements BankAccount{
         return (balance * getInterestRate()) + balance ;
     }
 
-    @Override
-    public String showInfo() {
-        return "Account number: " + accountNumber +
-                "\nAccount name: " + accountName +
-                "\nBalance: " + balance;
-    }
 }
