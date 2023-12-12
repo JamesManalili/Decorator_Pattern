@@ -5,37 +5,39 @@ public class UpSave implements BankAccountDecorator {
 
     public UpSave(BankAccount bankAccount){
         this.bankAccount = bankAccount;
-    }
-
-
-    @Override
-    public String showAccountType() {
-        return "UpSave";
-    }
+    }
 
     @Override
     public Double getInterestRate() {
-        return 0.04;
+        return 0.01;
     }
 
     @Override
     public Double getBalance() {
-        return bankAccount.getBalance();
+        return balance;
+    }
+
+    @Override
+    public String showAccountType() {
+        return "Saving Account";
     }
 
     @Override
     public String showBenefits() {
-        return bankAccount.showBenefits() + ", With Insurance";
+        return "Standard Savings Account";
+    }
+
+
+    @Override
+    public String showInfo() {
+        return "Account number: " + accountNumber +
+                "\nAccount name: " + accountName +
+                "\nBalance: " + balance;
     }
 
     @Override
     public Double computeBalanceWithInterest() {
-        return (bankAccount.getBalance() * getInterestRate() + bankAccount.getBalance()) ;
-    }
-
-    @Override
-    public String showInfo() {
-        return bankAccount.showInfo();
+        return (balance * getInterestRate()) + balance ;
     }
 
     @Override
