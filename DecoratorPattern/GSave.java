@@ -7,34 +7,38 @@ public class GSave implements BankAccountDecorator{
     public GSave(BankAccount bankAccount){
         this.bankAccount = bankAccount;
     }
-    @Override
-    public String showAccountType() {
-        return "GSave";
-    }
-
+    
     @Override
     public Double getInterestRate() {
-        return 0.025;
+        return 0.01;
     }
 
     @Override
     public Double getBalance() {
-        return bankAccount.getBalance();
+        return balance;
+    }
+
+    @Override
+    public String showAccountType() {
+        return "Saving Account";
     }
 
     @Override
     public String showBenefits() {
-        return bankAccount.showBenefits() + ", GCash Transfer";
+        return "Standard Savings Account";
+    }
+
+
+    @Override
+    public String showInfo() {
+        return "Account number: " + accountNumber +
+                "\nAccount name: " + accountName +
+                "\nBalance: " + balance;
     }
 
     @Override
     public Double computeBalanceWithInterest() {
-        return (bankAccount.getBalance() * getInterestRate()) + bankAccount.getBalance();
-    }
-
-    @Override
-    public String showInfo() {
-        return bankAccount.showInfo();
+        return (balance * getInterestRate()) + balance ;
     }
 
     @Override
