@@ -5,7 +5,7 @@ public class UpSave implements BankAccountDecorator {
 
     public UpSave(BankAccount bankAccount){
         this.bankAccount = bankAccount;
-    }
+    }
 
     @Override
     public Double getInterestRate() {
@@ -26,7 +26,6 @@ public class UpSave implements BankAccountDecorator {
     public String showBenefits() {
         return "Standard Savings Account";
     }
-
 
     @Override
     public String showInfo() {
