@@ -31,12 +31,11 @@ public class SavingsAccount implements BankAccount{
     public String showAccountType() {
         return "Saving Account";
     }
-
+
     @Override
     public String showBenefits() {
         return "Standard Savings Account";
     }
-
     
     @Override
     public String showInfo() {
@@ -49,5 +48,4 @@ public class SavingsAccount implements BankAccount{
     public Double computeBalanceWithInterest() {
         return (balance * getInterestRate()) + balance ;
     }
-
 }
