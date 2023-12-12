@@ -27,8 +27,7 @@ public class GSave implements BankAccountDecorator{
     public String showBenefits() {
         return "Standard Savings Account";
     }
-
-
+    
     @Override
     public String showInfo() {
         return "Account number: " + accountNumber +
